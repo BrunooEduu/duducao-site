@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Duducão Banho e Tosa</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<style>
+  body { margin: 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+function Icon({
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 2,
+  fill = "none",
+  className = "",
+  style = {},
+  children
+}) {
+  return /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: fill,
+    stroke: color,
+    strokeWidth: strokeWidth,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: className,
+    style: style
+  }, children);
+}
+function PawPrint(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("circle", {
+    cx: "8",
+    cy: "5.5",
+    r: "2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "16",
+    cy: "5.5",
+    r: "2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "4.2",
+    cy: "11.5",
+    r: "2"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "19.8",
+    cy: "11.5",
+    r: "2"
+  }), /*#__PURE__*/React.createElement("ellipse", {
+    cx: "12",
+    cy: "17.5",
+    rx: "6",
+    ry: "4.5"
+  }));
+}
+function Scissors(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("circle", {
+    cx: "6",
+    cy: "6",
+    r: "3"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "6",
+    cy: "18",
+    r: "3"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "20",
+    y1: "4",
+    x2: "8.12",
+    y2: "15.88"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "14.47",
+    y1: "14.48",
+    x2: "20",
+    y2: "20"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "8.12",
+    y1: "8.12",
+    x2: "12",
+    y2: "12"
+  }));
+}
+function Truck(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("rect", {
+    x: "1",
+    y: "3",
+    width: "15",
+    height: "13"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 8h4l3 5v3h-7V8z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "5.5",
+    cy: "18.5",
+    r: "2.5"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "18.5",
+    cy: "18.5",
+    r: "2.5"
+  }));
+}
+function ShoppingBag(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 6h18"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 10a4 4 0 0 1-8 0"
+  }));
+}
+function MessageCircle(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M7.9 20A9 9 0 1 0 4 16.1L2 22Z"
+  }));
+}
+function MapPin(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "10",
+    r: "3"
+  }));
+}
+function Instagram(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("rect", {
+    x: "2",
+    y: "2",
+    width: "20",
+    height: "20",
+    rx: "5",
+    ry: "5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "17.5",
+    y1: "6.5",
+    x2: "17.51",
+    y2: "6.5"
+  }));
+}
+function Facebook(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"
+  }));
+}
+function Menu(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "6",
+    x2: "21",
+    y2: "6"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "12",
+    x2: "21",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "3",
+    y1: "18",
+    x2: "21",
+    y2: "18"
+  }));
+}
+function X(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("line", {
+    x1: "18",
+    y1: "6",
+    x2: "6",
+    y2: "18"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "6",
+    y1: "6",
+    x2: "18",
+    y2: "18"
+  }));
+}
+function Camera(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "13",
+    r: "3"
+  }));
+}
+function Phone(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+  }));
+}
+function Bone(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("circle", {
+    cx: "5.5",
+    cy: "7",
+    r: "2.3"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "18.5",
+    cy: "17",
+    r: "2.3"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M7 8.6 15.4 17"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M7 5.4a2.3 2.3 0 1 0-3 2.2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M17 18.6a2.3 2.3 0 1 0 3-2.2"
+  }));
+}
+function Star(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("polygon", {
+    points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"
+  }));
+}
+function Send(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "m22 2-7 20-4-9-9-4Z"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M22 2 11 13"
+  }));
+}
+function Clock(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("polyline", {
+    points: "12 6 12 12 16 14"
+  }));
+}
+function HomeIcon(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("path", {
+    d: "M3 9.5 12 3l9 6.5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"
+  }));
+}
+function ArrowRight(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("line", {
+    x1: "5",
+    y1: "12",
+    x2: "19",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("polyline", {
+    points: "12 5 19 12 12 19"
+  }));
+}
+function ChevronLeft(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("polyline", {
+    points: "15 18 9 12 15 6"
+  }));
+}
+function ChevronRight(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("polyline", {
+    points: "9 18 15 12 9 6"
+  }));
+}
+function ChevronDown(props) {
+  return /*#__PURE__*/React.createElement(Icon, props, /*#__PURE__*/React.createElement("polyline", {
+    points: "6 9 12 15 18 9"
+  }));
+}
+const {
+  useState,
+  useRef,
+  useEffect
+} = React;
+
+/**
+ * DUDUCÃO BANHO E TOSA — Rio do Sul, SC
+ * -----------------------------------------------------------------
+ * Dados reais da empresa (confirmados via CNPJ/redes sociais):
+ * - Endereço: Alameda Aristiliano Ramos, 1320, Sala 04, Centro, Rio do Sul - SC, 89160-113
+ * - WhatsApp: (47) 99135-1937
+ * - Instagram: @duducaobanhoetosa | Facebook: duducao.banhoetosa
+ * - Atuando desde 2016 (9+ anos)
+ * -----------------------------------------------------------------
+ */
+
+const WHATSAPP_NUMERO = "5547991351937";
+const ENDERECO = "Alameda Aristiliano Ramos, 1320, Sala 04 - Centro, Rio do Sul - SC";
+const INSTAGRAM = "@duducaobanhoetosa";
+const INSTAGRAM_URL = "https://www.instagram.com/duducaobanhoetosa/";
+const FACEBOOK_URL = "https://www.facebook.com/duducao.banhoetosa/";
+
+// Paleta seguindo a identidade já usada na van e nas redes (rosa + azul marinho)
+const COLORS = {
+  bg: "#FFFFFF",
+  surface: "#FCF7FA",
+  pink: "#E4147C",
+  pinkDark: "#B10E62",
+  navy: "#1F2B63",
+  navyDark: "#141C42",
+  text: "#26263A",
+  muted: "#6B6B80"
+};
+
+// A jornada real do pet no Duducão — é sequência de verdade, por isso vira numeração
+const JORNADA = [{
+  icon: Truck,
+  titulo: "Buscamos seu pet",
+  curto: "Busca em casa",
+  descricao: "Você agenda pelo WhatsApp e a gente busca no seu endereço. Você não precisa nem sair de casa."
+}, {
+  icon: Scissors,
+  titulo: "Banho & Tosa completo",
+  curto: "Banho & tosa",
+  descricao: "Higiene com produtos de qualidade, tosa na régua ou na tesoura, do jeito que seu pet gosta."
+}, {
+  icon: Camera,
+  titulo: "Ensaio fotográfico surpresa",
+  curto: "Ensaio de fotos",
+  destaque: true,
+  descricao: "Cenário temático diferente a cada visita. É a nossa assinatura, quase ninguém mais faz isso por aqui."
+}, {
+  icon: HomeIcon,
+  titulo: "Devolvemos em casa",
+  curto: "Entrega em casa",
+  descricao: "Seu pet volta limpinho, feliz, e com uma foto nova pra você guardar de lembrança."
+}];
+
+// Fotos reais dos ensaios temáticos do Duducão
+const GALERIA = [{
+  tema: "Banho Tá OK",
+  cor: "#B71C4A",
+  foto: "https://i.postimg.cc/N925rYgg/banhotaok.png"
+}, {
+  tema: "Copa do Mundo",
+  cor: "#1F2B63",
+  foto: "https://i.postimg.cc/PpvP8htL/copa.png"
+}, {
+  tema: "Dia da Mulher",
+  cor: "#E4147C",
+  foto: "https://i.postimg.cc/ph5pnx2j/diadamulher.png"
+}, {
+  tema: "Dia dos Pais",
+  cor: "#3D8B8B",
+  foto: "https://i.postimg.cc/dkZLTvqT/diadospais.png"
+}, {
+  tema: "Festa Junina",
+  cor: "#4A7A3D",
+  foto: "https://i.postimg.cc/CBnzfYFq/junina.png"
+}, {
+  tema: "Páscoa",
+  cor: "#D9762B",
+  foto: "https://i.postimg.cc/340dD7Kg/pascoa.png"
+}];
+
+// Avaliações — trocar por depoimentos reais (Google/Instagram) assim que o Bruno tiver
+const AVALIACOES = [{
+  nome: "Camila R.",
+  pet: "tutora de cachorro",
+  texto: "Atendimento super atencioso, meu cachorro sempre volta cheiroso e a foto depois do banho é a melhor parte!",
+  nota: 5
+}, {
+  nome: "Rodrigo M.",
+  pet: "tutor de cachorro",
+  texto: "O leva e traz facilita muito minha rotina. Confio demais no cuidado que eles têm com os pets.",
+  nota: 5
+}, {
+  nome: "Fernanda A.",
+  pet: "tutora de gato",
+  texto: "Equipe cuidadosa mesmo com gatos mais arredios. Recomendo demais!",
+  nota: 5
+}];
+const FAQ = [{
+  pergunta: "Vocês atendem cães e gatos?",
+  resposta: "Sim! Cuidamos dos dois com todo o carinho, inclusive gatos mais arredios, que pedem uma atenção especial na hora do banho."
+}, {
+  pergunta: "O Leva e Traz tem custo extra?",
+  resposta: "Já está incluso no atendimento, sem taxa escondida. É só combinar o horário com a gente pelo WhatsApp."
+}, {
+  pergunta: "Preciso agendar com quanto tempo de antecedência?",
+  resposta: "O ideal é chamar no WhatsApp com 1 a 2 dias de antecedência, mas em muitos casos conseguimos encaixar no mesmo dia ou no dia seguinte."
+}, {
+  pergunta: "Quais bairros vocês atendem com o Leva e Traz?",
+  resposta: "Atendemos Rio do Sul e região central. Manda sua localização no WhatsApp que a gente confirma na hora."
+}, {
+  pergunta: "Dá pra escolher o tipo de tosa?",
+  resposta: "Sim, na régua ou na tesoura, do jeito que você e seu pet preferirem. É só avisar na hora de agendar."
+}];
+
+// Fotos de antes/depois por pet — troque "antes"/"depois" por URLs assim que tiver as fotos
+const ANTES_DEPOIS = [{
+  nome: "Thor",
+  antes: null,
+  depois: null,
+  corAntes: "#8A8478",
+  corDepois: "#1F2B63"
+}, {
+  nome: "Luna",
+  antes: null,
+  depois: null,
+  corAntes: "#8A8478",
+  corDepois: "#E4147C"
+}, {
+  nome: "Mel",
+  antes: null,
+  depois: null,
+  corAntes: "#8A8478",
+  corDepois: "#3D8B8B"
+}, {
+  nome: "Bento",
+  antes: null,
+  depois: null,
+  corAntes: "#8A8478",
+  corDepois: "#4A7A3D"
+}, {
+  nome: "Nina",
+  antes: null,
+  depois: null,
+  corAntes: "#8A8478",
+  corDepois: "#D9762B"
+}];
+function whatsappLink(mensagem) {
+  return `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+}
+
+// Slider interativo de comparação antes/depois. Funciona com foto real (URL)
+// ou com o bloco colorido de placeholder, arrastando o controle central.
+function AntesDepoisSlider({
+  nome,
+  antes,
+  depois,
+  corAntes,
+  corDepois
+}) {
+  const [pos, setPos] = useState(50);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "relative w-full rounded-2xl overflow-hidden select-none",
+    style: {
+      aspectRatio: "4 / 3"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute inset-0",
+    style: {
+      backgroundColor: corDepois,
+      backgroundImage: depois ? `url("${depois}")` : "none",
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "absolute inset-0",
+    style: {
+      backgroundColor: corAntes,
+      backgroundImage: antes ? `url("${antes}")` : "none",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      clipPath: `inset(0 ${100 - pos}% 0 0)`
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "absolute top-3 left-3 font-bold uppercase tracking-wide px-2.5 py-1 rounded-full text-white",
+    style: {
+      backgroundColor: "rgba(0,0,0,0.45)",
+      fontSize: "11px"
+    }
+  }, "Antes"), /*#__PURE__*/React.createElement("span", {
+    className: "absolute top-3 right-3 font-bold uppercase tracking-wide px-2.5 py-1 rounded-full text-white",
+    style: {
+      backgroundColor: "rgba(0,0,0,0.45)",
+      fontSize: "11px"
+    }
+  }, "Depois"), /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-0 bottom-0 pointer-events-none",
+    style: {
+      left: `${pos}%`,
+      width: "3px",
+      backgroundColor: "white",
+      transform: "translateX(-50%)"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "absolute rounded-full flex items-center justify-center pointer-events-none shadow-lg",
+    style: {
+      left: `${pos}%`,
+      top: "50%",
+      transform: "translate(-50%, -50%)",
+      width: "36px",
+      height: "36px",
+      backgroundColor: "white"
+    }
+  }, /*#__PURE__*/React.createElement(ChevronLeft, {
+    size: 13,
+    color: "#333",
+    style: {
+      marginRight: "-4px"
+    }
+  }), /*#__PURE__*/React.createElement(ChevronRight, {
+    size: 13,
+    color: "#333",
+    style: {
+      marginLeft: "-4px"
+    }
+  })), /*#__PURE__*/React.createElement("input", {
+    type: "range",
+    min: "0",
+    max: "100",
+    value: pos,
+    onChange: e => setPos(Number(e.target.value)),
+    "aria-label": `Comparar antes e depois de ${nome}`,
+    className: "absolute inset-0 w-full h-full opacity-0 cursor-ew-resize",
+    style: {
+      margin: 0
+    }
+  }));
+}
+
+// Componente que anima fade + slide suave quando a seção entra na tela
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  style = {}
+}) {
+  const ref = useRef(null);
+  const [visivel, setVisivel] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisivel(true);
+        observer.disconnect();
+      }
+    }, {
+      threshold: 0.15
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: className,
+    style: {
+      ...style,
+      opacity: visivel ? 1 : 0,
+      transform: visivel ? "translateY(0)" : "translateY(28px)",
+      transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`
+    }
+  }, children);
+}
+function DuducaoSite() {
+  const [menuAberto, setMenuAberto] = useState(false);
+  const [passoAtivo, setPassoAtivo] = useState(0);
+  const [slideAtivo, setSlideAtivo] = useState(0);
+  const carrosselRef = useRef(null);
+  const [form, setForm] = useState({
+    nome: "",
+    telefone: "",
+    pet: "cachorro",
+    servico: "Banho & Tosa"
+  });
+  const [faqAberto, setFaqAberto] = useState(0);
+  const [abaContato, setAbaContato] = useState("dados");
+  const [secaoAtiva, setSecaoAtiva] = useState("");
+  const [estaAberto, setEstaAberto] = useState(true);
+  const [petSelecionado, setPetSelecionado] = useState(0);
+  const [telaLarga, setTelaLarga] = useState(true);
+  useEffect(() => {
+    function medir() {
+      setTelaLarga(window.innerWidth >= 768);
+    }
+    medir();
+    window.addEventListener("resize", medir);
+    return () => window.removeEventListener("resize", medir);
+  }, []);
+  const [proximaAbertura, setProximaAbertura] = useState("");
+  function irParaSlide(i) {
+    const container = carrosselRef.current;
+    if (!container) return;
+    const largura = container.clientWidth;
+    container.scrollTo({
+      left: i * largura,
+      behavior: "smooth"
+    });
+    setSlideAtivo(i);
+  }
+  function aoRolarCarrossel(e) {
+    const largura = e.target.clientWidth;
+    const indice = Math.round(e.target.scrollLeft / largura);
+    if (indice !== slideAtivo) setSlideAtivo(indice);
+  }
+  function enviarFormulario(e) {
+    e.preventDefault();
+    if (!form.nome.trim() || !form.telefone.trim()) return;
+    const mensagem = `Olá! Meu nome é ${form.nome}, meu telefone é ${form.telefone}.\n` + `Tenho um(a) ${form.pet} e tenho interesse em: ${form.servico}.`;
+    window.open(whatsappLink(mensagem), "_blank");
+  }
+
+  // Horário de funcionamento: Seg a Sáb, 8h às 18h
+  useEffect(() => {
+    function calcularStatus() {
+      const agora = new Date();
+      const dia = agora.getDay(); // 0 = domingo, 6 = sábado
+      const hora = agora.getHours() + agora.getMinutes() / 60;
+      const diaUtil = dia >= 1 && dia <= 6;
+      const dentroDoHorario = hora >= 8 && hora < 18;
+      setEstaAberto(diaUtil && dentroDoHorario);
+      if (!(diaUtil && dentroDoHorario)) {
+        if (dia === 0) {
+          setProximaAbertura("Abre segunda às 8h");
+        } else if (hora >= 18) {
+          setProximaAbertura(dia === 6 ? "Abre segunda às 8h" : "Abre amanhã às 8h");
+        } else {
+          setProximaAbertura("Abre hoje às 8h");
+        }
+      }
+    }
+    calcularStatus();
+    const intervalo = setInterval(calcularStatus, 60000);
+    return () => clearInterval(intervalo);
+  }, []);
+
+  // Destaca no menu qual seção está visível conforme a rolagem
+  useEffect(() => {
+    const ids = ["servicos", "galeria", "localizacao", "agendar", "contato"];
+    const elementos = ids.map(id => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver(entradas => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          setSecaoAtiva(entrada.target.id);
+        }
+      });
+    }, {
+      rootMargin: "-45% 0px -45% 0px"
+    });
+    elementos.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundColor: COLORS.bg,
+      color: COLORS.text
+    },
+    className: "min-h-screen"
+  }, /*#__PURE__*/React.createElement("style", null, `
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+        .font-display { font-family: 'Baloo 2', cursive; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        .paw-bg {
+          background-image: radial-gradient(${COLORS.pink}12 2px, transparent 2px);
+          background-size: 26px 26px;
+        }
+        .snap-x::-webkit-scrollbar { display: none; }
+
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-14px); }
+        }
+        .hero-float { animation: floatY 4.5s ease-in-out infinite; }
+
+        @keyframes pulseRing {
+          0% { transform: scale(0.85); opacity: 0.55; }
+          100% { transform: scale(1.35); opacity: 0; }
+        }
+        .hero-ring {
+          animation: pulseRing 2.8s ease-out infinite;
+        }
+        .hero-ring.delay {
+          animation-delay: 1.4s;
+        }
+
+        @keyframes wiggle {
+          0%, 100% { transform: rotate(-6deg); }
+          50% { transform: rotate(6deg); }
+        }
+        .paw-wiggle { animation: wiggle 3.2s ease-in-out infinite; transform-origin: center; }
+
+        @keyframes popIn {
+          0% { transform: scale(0) rotate(-6deg); opacity: 0; }
+          70% { transform: scale(1.12) rotate(-6deg); opacity: 1; }
+          100% { transform: scale(1) rotate(-6deg); opacity: 1; }
+        }
+        .badge-pop { animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s backwards; }
+
+        @keyframes ctaGlow {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.35); }
+          50% { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+        }
+        .cta-glow { animation: ctaGlow 2.2s ease-out infinite; }
+
+        .nav-paw { transition: transform 0.3s ease; }
+        .nav-paw:hover { transform: rotate(-18deg) scale(1.1); }
+      `), /*#__PURE__*/React.createElement("div", {
+    className: "font-body"
+  }, /*#__PURE__*/React.createElement("header", {
+    className: "sticky top-0 z-40 backdrop-blur border-b",
+    style: {
+      backgroundColor: `${COLORS.bg}F0`,
+      borderColor: "#F0DCE9"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2"
+  }, /*#__PURE__*/React.createElement(PawPrint, {
+    size: 26,
+    color: COLORS.pink,
+    strokeWidth: 2.2,
+    className: "nav-paw"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "font-display text-2xl font-bold",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Duducão", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: COLORS.navy
+    },
+    className: "text-base font-semibold ml-1.5"
+  }, "Banho & Tosa"))), /*#__PURE__*/React.createElement("nav", {
+    className: "hidden md:flex items-center gap-8 text-sm font-semibold",
+    style: {
+      color: COLORS.navy
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#servicos",
+    className: "hover:opacity-70 transition-colors pb-1",
+    style: secaoAtiva === "servicos" ? {
+      color: COLORS.pink,
+      borderBottom: `2px solid ${COLORS.pink}`
+    } : {}
+  }, "Serviços"), /*#__PURE__*/React.createElement("a", {
+    href: "#galeria",
+    className: "hover:opacity-70 transition-colors pb-1",
+    style: secaoAtiva === "galeria" ? {
+      color: COLORS.pink,
+      borderBottom: `2px solid ${COLORS.pink}`
+    } : {}
+  }, "Galeria"), /*#__PURE__*/React.createElement("a", {
+    href: "#localizacao",
+    className: "hover:opacity-70 transition-colors pb-1",
+    style: secaoAtiva === "localizacao" ? {
+      color: COLORS.pink,
+      borderBottom: `2px solid ${COLORS.pink}`
+    } : {}
+  }, "Onde estamos"), /*#__PURE__*/React.createElement("a", {
+    href: "#agendar",
+    className: "hover:opacity-70 transition-colors pb-1",
+    style: secaoAtiva === "agendar" ? {
+      color: COLORS.pink,
+      borderBottom: `2px solid ${COLORS.pink}`
+    } : {}
+  }, "Agendar"), /*#__PURE__*/React.createElement("a", {
+    href: "#contato",
+    className: "hover:opacity-70 transition-colors pb-1",
+    style: secaoAtiva === "contato" ? {
+      color: COLORS.pink,
+      borderBottom: `2px solid ${COLORS.pink}`
+    } : {}
+  }, "Contato")), /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Vim pelo site e gostaria de agendar um banho."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition-transform hover:scale-105",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 16
+  }), "Agendar no WhatsApp"), /*#__PURE__*/React.createElement("button", {
+    className: "md:hidden",
+    onClick: () => setMenuAberto(!menuAberto),
+    style: {
+      color: COLORS.navy
+    }
+  }, menuAberto ? /*#__PURE__*/React.createElement(X, {
+    size: 24
+  }) : /*#__PURE__*/React.createElement(Menu, {
+    size: 24
+  }))), menuAberto && /*#__PURE__*/React.createElement("div", {
+    className: "md:hidden px-6 pb-4 flex flex-col gap-3 text-sm font-semibold",
+    style: {
+      color: COLORS.navy
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#servicos",
+    onClick: () => setMenuAberto(false)
+  }, "Serviços"), /*#__PURE__*/React.createElement("a", {
+    href: "#galeria",
+    onClick: () => setMenuAberto(false)
+  }, "Galeria"), /*#__PURE__*/React.createElement("a", {
+    href: "#localizacao",
+    onClick: () => setMenuAberto(false)
+  }, "Onde estamos"), /*#__PURE__*/React.createElement("a", {
+    href: "#agendar",
+    onClick: () => setMenuAberto(false)
+  }, "Agendar"), /*#__PURE__*/React.createElement("a", {
+    href: "#contato",
+    onClick: () => setMenuAberto(false)
+  }, "Contato"), /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Vim pelo site e gostaria de agendar um banho."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "mt-1 px-4 py-2.5 rounded-full text-center font-bold text-white",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, "Agendar no WhatsApp"))), /*#__PURE__*/React.createElement("section", {
+    className: "paw-bg"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap items-center gap-2 mb-5"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full",
+    style: {
+      backgroundColor: COLORS.navy,
+      color: "white"
+    }
+  }, /*#__PURE__*/React.createElement(Truck, {
+    size: 13
+  }), "Leva e Traz"), /*#__PURE__*/React.createElement("span", {
+    className: "inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full",
+    style: {
+      backgroundColor: estaAberto ? "#E7F5EC" : "#FBEAEA",
+      color: estaAberto ? "#1E7A45" : "#B3261E"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "w-1.5 h-1.5 rounded-full",
+    style: {
+      backgroundColor: estaAberto ? "#2FA65A" : "#D93025"
+    }
+  }), estaAberto ? "Aberto agora" : proximaAbertura)), /*#__PURE__*/React.createElement("h1", {
+    className: "font-display text-4xl md:text-5xl font-bold leading-tight mb-5",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Seu pet limpinho, feliz e", " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: COLORS.pink
+    }
+  }, "com uma foto pra guardar")), /*#__PURE__*/React.createElement("p", {
+    className: "text-base leading-relaxed mb-8",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Há mais de 9 anos cuidando dos pets de Rio do Sul com banho, tosa e um mimo que é só nosso: toda vez que seu pet sai do banho, ele ganha um ensaio de fotos temático. Buscamos e levamos de volta, sem você precisar sair de casa."), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-wrap gap-3"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Gostaria de agendar um banho e tosa."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "px-6 py-3 rounded-full text-sm font-bold text-white transition-transform hover:scale-105",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, "Agendar horário"), /*#__PURE__*/React.createElement("a", {
+    href: "#galeria",
+    className: "px-6 py-3 rounded-full text-sm font-bold border-2 transition-colors",
+    style: {
+      borderColor: COLORS.navy,
+      color: COLORS.navy
+    }
+  }, "Ver ensaios de fotos"))), /*#__PURE__*/React.createElement("div", {
+    className: "relative flex justify-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute rounded-full hero-ring",
+    style: {
+      width: "18rem",
+      height: "18rem",
+      backgroundColor: COLORS.pink
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "absolute rounded-full hero-ring delay",
+    style: {
+      width: "18rem",
+      height: "18rem",
+      backgroundColor: COLORS.pink
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "hero-float w-72 h-72 md:w-80 md:h-80 rounded-full flex items-center justify-center relative",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, /*#__PURE__*/React.createElement(PawPrint, {
+    size: 140,
+    color: "white",
+    strokeWidth: 1.3,
+    className: "paw-wiggle"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "badge-pop absolute -bottom-2 -left-2 w-24 h-24 rounded-2xl flex flex-col items-center justify-center shadow-lg text-white",
+    style: {
+      backgroundColor: COLORS.navy
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-display text-2xl font-bold leading-none"
+  }, "9+"), /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-semibold uppercase tracking-wide mt-1",
+    style: {
+      fontSize: "10px"
+    }
+  }, "anos cuidando"))))), /*#__PURE__*/React.createElement("section", {
+    className: "border-y",
+    style: {
+      borderColor: "#F0DCE9",
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6"
+  }, [{
+    icon: Clock,
+    texto: "9+ anos de experiência"
+  }, {
+    icon: Truck,
+    texto: "Leva e Traz incluso"
+  }, {
+    icon: PawPrint,
+    texto: "Atendimento humanizado"
+  }, {
+    icon: Star,
+    texto: "4.9 de avaliação"
+  }].map(b => /*#__PURE__*/React.createElement("div", {
+    key: b.texto,
+    className: "flex items-center gap-2.5"
+  }, /*#__PURE__*/React.createElement(b.icon, {
+    size: 20,
+    color: COLORS.pink,
+    strokeWidth: 2,
+    className: "shrink-0"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "text-xs md:text-sm font-semibold",
+    style: {
+      color: COLORS.navy
+    }
+  }, b.texto))))), /*#__PURE__*/React.createElement("section", {
+    id: "servicos",
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-12 max-w-xl"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Como funciona"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "O dia do seu pet aqui, passo a passo")), /*#__PURE__*/React.createElement("div", {
+    className: "relative mb-10"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-6 left-6 right-6 h-0.5",
+    style: {
+      backgroundImage: `repeating-linear-gradient(90deg, #E7CFE0 0 8px, transparent 8px 14px)`
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "absolute top-6 left-6 h-0.5 transition-all duration-500",
+    style: {
+      backgroundColor: COLORS.pink,
+      width: `calc(${passoAtivo / (JORNADA.length - 1) * 100}% - 0px)`,
+      maxWidth: "calc(100% - 48px)"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "relative flex justify-between"
+  }, JORNADA.map((passo, i) => /*#__PURE__*/React.createElement("button", {
+    key: passo.titulo,
+    onClick: () => setPassoAtivo(i),
+    className: "flex flex-col items-center gap-2 group focus:outline-none",
+    style: {
+      width: `${100 / JORNADA.length}%`
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 border-2 group-focus-visible:ring-2 ring-offset-2",
+    style: i === passoAtivo ? {
+      backgroundColor: COLORS.pink,
+      borderColor: COLORS.pink,
+      color: "white",
+      transform: "scale(1.12)"
+    } : i < passoAtivo ? {
+      backgroundColor: COLORS.pink,
+      borderColor: COLORS.pink,
+      color: "white",
+      opacity: 0.55
+    } : {
+      backgroundColor: "white",
+      borderColor: "#E7CFE0",
+      color: COLORS.muted
+    }
+  }, i + 1), /*#__PURE__*/React.createElement("span", {
+    className: "hidden sm:block text-xs font-semibold text-center leading-tight",
+    style: {
+      color: i === passoAtivo ? COLORS.navy : COLORS.muted
+    }
+  }, passo.curto))))), /*#__PURE__*/React.createElement("div", {
+    key: passoAtivo,
+    className: "rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-6 items-center border",
+    style: {
+      backgroundColor: JORNADA[passoAtivo].destaque ? COLORS.navy : COLORS.surface,
+      borderColor: JORNADA[passoAtivo].destaque ? COLORS.navy : "#F0DCE9",
+      animation: "fadeSlideIn 0.35s ease"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-16 h-16 rounded-2xl flex items-center justify-center shrink-0",
+    style: {
+      backgroundColor: JORNADA[passoAtivo].destaque ? COLORS.pink : COLORS.navy
+    }
+  }, React.createElement(JORNADA[passoAtivo].icon, {
+    size: 30,
+    color: "white",
+    strokeWidth: 2
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex-1 min-w-0"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2 mb-1.5 flex-wrap"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "font-display text-xl md:text-2xl font-bold",
+    style: {
+      color: JORNADA[passoAtivo].destaque ? "white" : COLORS.navy
+    }
+  }, JORNADA[passoAtivo].titulo), JORNADA[passoAtivo].destaque && /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full",
+    style: {
+      backgroundColor: COLORS.pink,
+      color: "white",
+      fontSize: "10px"
+    }
+  }, "Só aqui")), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm leading-relaxed max-w-lg",
+    style: {
+      color: JORNADA[passoAtivo].destaque ? "rgba(255,255,255,0.85)" : COLORS.muted
+    }
+  }, JORNADA[passoAtivo].descricao))), /*#__PURE__*/React.createElement("div", {
+    className: "flex justify-end mt-4"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setPassoAtivo(p => (p + 1) % JORNADA.length),
+    className: "inline-flex items-center gap-1.5 text-xs font-bold",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Próximo passo", /*#__PURE__*/React.createElement(ArrowRight, {
+    size: 14
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "mt-8 flex flex-wrap items-center gap-4 rounded-2xl p-5 border",
+    style: {
+      borderColor: "#F0DCE9",
+      backgroundColor: "white"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "w-11 h-11 rounded-xl flex items-center justify-center shrink-0",
+    style: {
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement(ShoppingBag, {
+    size: 20,
+    color: COLORS.pink,
+    strokeWidth: 2
+  })), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm flex-1 min-w-0",
+    style: {
+      color: COLORS.text
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "font-bold",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Também vendemos ração e produtos"), " ", "— aproveite quando vier buscar ou entregar seu pet."))), /*#__PURE__*/React.createElement("style", null, `
+          @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `), /*#__PURE__*/React.createElement("section", {
+    id: "galeria",
+    className: "py-20",
+    style: {
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-10 max-w-xl"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Nosso diferencial"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Cada estação, um ensaio novo"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm mt-2",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Um recorte dos últimos ensaios. Segue a gente no Instagram pra ver as novidades de cada estação.")), /*#__PURE__*/React.createElement("div", {
+    className: "sm:hidden"
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: carrosselRef,
+    onScroll: aoRolarCarrossel,
+    className: "flex overflow-x-auto snap-x snap-mandatory",
+    style: {
+      scrollbarWidth: "none"
+    }
+  }, GALERIA.map(g => /*#__PURE__*/React.createElement("div", {
+    key: g.tema,
+    className: "relative shrink-0 w-full rounded-xl snap-center overflow-hidden flex flex-col items-center justify-center gap-3 text-white",
+    style: {
+      backgroundColor: g.cor,
+      aspectRatio: "4 / 5",
+      backgroundImage: g.foto ? `url("${g.foto}")` : "none",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center"
+    },
+    role: "img",
+    "aria-label": g.foto ? `Ensaio ${g.tema}` : undefined
+  }, !g.foto && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Camera, {
+    size: 40,
+    strokeWidth: 1.5
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "font-display font-bold text-lg"
+  }, g.tema))))), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-between mt-4"
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => irParaSlide(Math.max(0, slideAtivo - 1)),
+    className: "w-9 h-9 rounded-full flex items-center justify-center border",
+    style: {
+      borderColor: "#E7CFE0",
+      color: COLORS.navy
+    },
+    "aria-label": "Ensaio anterior"
+  }, /*#__PURE__*/React.createElement(ChevronLeft, {
+    size: 18
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1.5"
+  }, GALERIA.map((_, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    onClick: () => irParaSlide(i),
+    "aria-label": `Ir pro ensaio ${i + 1}`,
+    className: "h-2 rounded-full transition-all duration-300",
+    style: {
+      width: i === slideAtivo ? "18px" : "8px",
+      backgroundColor: i === slideAtivo ? COLORS.pink : "#E7CFE0"
+    }
+  }))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => irParaSlide(Math.min(GALERIA.length - 1, slideAtivo + 1)),
+    className: "w-9 h-9 rounded-full flex items-center justify-center border",
+    style: {
+      borderColor: "#E7CFE0",
+      color: COLORS.navy
+    },
+    "aria-label": "Próximo ensaio"
+  }, /*#__PURE__*/React.createElement(ChevronRight, {
+    size: 18
+  })))), /*#__PURE__*/React.createElement("div", {
+    className: "hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+  }, GALERIA.map(g => /*#__PURE__*/React.createElement("div", {
+    key: g.tema,
+    className: "relative rounded-xl aspect-square overflow-hidden flex flex-col items-center justify-center gap-2 text-white",
+    style: {
+      backgroundColor: g.cor,
+      backgroundImage: g.foto ? `url("${g.foto}")` : "none",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center"
+    },
+    role: "img",
+    "aria-label": g.foto ? `Ensaio ${g.tema}` : undefined
+  }, !g.foto && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Camera, {
+    size: 28,
+    strokeWidth: 1.5
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "font-display font-bold text-sm"
+  }, g.tema))))), /*#__PURE__*/React.createElement("div", {
+    className: "mt-6 flex justify-center"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: INSTAGRAM_URL,
+    target: "_blank",
+    rel: "noreferrer",
+    className: "inline-flex items-center gap-2 text-sm font-bold",
+    style: {
+      color: COLORS.pink
+    }
+  }, /*#__PURE__*/React.createElement(Instagram, {
+    size: 16
+  }), "Ver mais ensaios no Instagram")))), /*#__PURE__*/React.createElement("section", {
+    id: "antes-depois",
+    className: "py-20",
+    style: {
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-10 max-w-xl"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Resultado de verdade"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Antes e depois"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm mt-2",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Arraste o controle pra comparar. Escolha um pet na lista ao lado.")), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col md:flex-row gap-6"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: telaLarga ? "flex flex-col gap-2 w-56 shrink-0 self-start" : "flex gap-2 overflow-x-auto"
+  }, ANTES_DEPOIS.map((pet, i) => /*#__PURE__*/React.createElement("button", {
+    key: pet.nome,
+    onClick: () => setPetSelecionado(i),
+    className: telaLarga ? "w-full text-left px-3.5 py-2 rounded-lg text-sm font-bold transition-colors" : "shrink-0 text-left px-4 py-2.5 rounded-lg text-sm font-bold transition-colors whitespace-nowrap",
+    style: i === petSelecionado ? {
+      backgroundColor: COLORS.pink,
+      color: "white"
+    } : {
+      backgroundColor: "white",
+      color: COLORS.navy,
+      border: "1px solid #F0DCE9"
+    }
+  }, pet.nome))), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 0.1,
+    className: "flex-1 min-w-0",
+    key: petSelecionado
+  }, /*#__PURE__*/React.createElement(AntesDepoisSlider, {
+    nome: ANTES_DEPOIS[petSelecionado].nome,
+    antes: ANTES_DEPOIS[petSelecionado].antes,
+    depois: ANTES_DEPOIS[petSelecionado].depois,
+    corAntes: ANTES_DEPOIS[petSelecionado].corAntes,
+    corDepois: ANTES_DEPOIS[petSelecionado].corDepois
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm font-semibold mt-3",
+    style: {
+      color: COLORS.navy
+    }
+  }, ANTES_DEPOIS[petSelecionado].nome))))), /*#__PURE__*/React.createElement("section", {
+    id: "localizacao",
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-10 max-w-xl"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Onde estamos"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Bem no centro de Rio do Sul")), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col md:flex-row gap-6 items-stretch"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "rounded-2xl p-6 sm:p-8 border flex flex-col justify-between md:flex-1",
+    style: {
+      borderColor: "#F0DCE9",
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start gap-2.5 mb-4"
+  }, /*#__PURE__*/React.createElement(MapPin, {
+    size: 18,
+    color: COLORS.pink,
+    className: "mt-0.5 shrink-0"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "text-sm font-semibold",
+    style: {
+      color: COLORS.navy
+    }
+  }, ENDERECO)), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start gap-2.5 mb-5"
+  }, /*#__PURE__*/React.createElement(Clock, {
+    size: 18,
+    color: COLORS.pink,
+    className: "mt-0.5 shrink-0"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "text-sm",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Seg a Sáb, 8h às 18h", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    className: "font-bold",
+    style: {
+      color: estaAberto ? "#1E7A45" : "#B3261E"
+    }
+  }, estaAberto ? "Aberto agora" : proximaAbertura)))), /*#__PURE__*/React.createElement("a", {
+    href: "https://www.google.com/maps?q=-27.2112766,-49.6330976",
+    target: "_blank",
+    rel: "noreferrer",
+    className: "inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-white transition-transform hover:scale-105",
+    style: {
+      backgroundColor: COLORS.navy
+    }
+  }, /*#__PURE__*/React.createElement(MapPin, {
+    size: 16
+  }), "Como chegar")), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 0.1,
+    className: "rounded-2xl overflow-hidden border",
+    style: {
+      borderColor: "#F0DCE9",
+      flex: "1.4 1 0%"
+    }
+  }, /*#__PURE__*/React.createElement("iframe", {
+    title: "Localização do Duducão Banho e Tosa",
+    src: "https://www.google.com/maps?q=-27.2112766,-49.6330976&z=16&output=embed",
+    width: "100%",
+    height: "100%",
+    style: {
+      border: 0,
+      display: "block",
+      minHeight: "280px"
+    },
+    loading: "lazy",
+    referrerPolicy: "no-referrer-when-downgrade"
+  })))), /*#__PURE__*/React.createElement("section", {
+    id: "agendar",
+    className: "py-20",
+    style: {
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-2xl mx-auto px-6"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "text-center mb-8"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Vamos marcar?"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Escolha como prefere falar com a gente")), /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-1 p-1 rounded-full mb-8 mx-auto max-w-md",
+    style: {
+      backgroundColor: "white",
+      border: `1px solid #F0DCE9`
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setAbaContato("dados"),
+    className: "flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-bold transition-colors",
+    style: abaContato === "dados" ? {
+      backgroundColor: COLORS.pink,
+      color: "white"
+    } : {
+      color: COLORS.muted
+    }
+  }, /*#__PURE__*/React.createElement(Send, {
+    size: 14
+  }), "Deixe seus dados"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setAbaContato("whatsapp"),
+    className: "flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-bold transition-colors",
+    style: abaContato === "whatsapp" ? {
+      backgroundColor: COLORS.pink,
+      color: "white"
+    } : {
+      color: COLORS.muted
+    }
+  }, /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 14
+  }), "Chamar no WhatsApp")), abaContato === "dados" && /*#__PURE__*/React.createElement("div", {
+    key: "dados",
+    style: {
+      animation: "fadeSlideIn 0.35s ease"
+    }
+  }, /*#__PURE__*/React.createElement("form", {
+    onSubmit: enviarFormulario,
+    className: "rounded-2xl p-6 sm:p-8 border space-y-4",
+    style: {
+      backgroundColor: "white",
+      borderColor: "#F0DCE9"
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    className: "block text-xs font-bold uppercase tracking-wide mb-1.5",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Seu nome"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    required: true,
+    value: form.nome,
+    onChange: e => setForm({
+      ...form,
+      nome: e.target.value
+    }),
+    placeholder: "Como podemos te chamar?",
+    className: "w-full px-4 py-2.5 rounded-lg border text-sm outline-none focus:ring-2",
+    style: {
+      borderColor: "#E7CFE0"
+    }
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    className: "block text-xs font-bold uppercase tracking-wide mb-1.5",
+    style: {
+      color: COLORS.navy
+    }
+  }, "WhatsApp"), /*#__PURE__*/React.createElement("input", {
+    type: "tel",
+    required: true,
+    value: form.telefone,
+    onChange: e => setForm({
+      ...form,
+      telefone: e.target.value
+    }),
+    placeholder: "(47) 9 9999-9999",
+    className: "w-full px-4 py-2.5 rounded-lg border text-sm outline-none focus:ring-2",
+    style: {
+      borderColor: "#E7CFE0"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "grid grid-cols-2 gap-4"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    className: "block text-xs font-bold uppercase tracking-wide mb-1.5",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Seu pet é..."), /*#__PURE__*/React.createElement("select", {
+    value: form.pet,
+    onChange: e => setForm({
+      ...form,
+      pet: e.target.value
+    }),
+    className: "w-full px-4 py-2.5 rounded-lg border text-sm outline-none",
+    style: {
+      borderColor: "#E7CFE0"
+    }
+  }, /*#__PURE__*/React.createElement("option", {
+    value: "cachorro"
+  }, "Cachorro"), /*#__PURE__*/React.createElement("option", {
+    value: "gato"
+  }, "Gato"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    className: "block text-xs font-bold uppercase tracking-wide mb-1.5",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Serviço"), /*#__PURE__*/React.createElement("select", {
+    value: form.servico,
+    onChange: e => setForm({
+      ...form,
+      servico: e.target.value
+    }),
+    className: "w-full px-4 py-2.5 rounded-lg border text-sm outline-none",
+    style: {
+      borderColor: "#E7CFE0"
+    }
+  }, /*#__PURE__*/React.createElement("option", null, "Banho & Tosa"), /*#__PURE__*/React.createElement("option", null, "Leva e Traz"), /*#__PURE__*/React.createElement("option", null, "Ração & Produtos"), /*#__PURE__*/React.createElement("option", null, "Ainda não sei")))), /*#__PURE__*/React.createElement("button", {
+    type: "submit",
+    className: "w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white transition-transform hover:scale-105",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, /*#__PURE__*/React.createElement(Send, {
+    size: 16
+  }), "Enviar pelo WhatsApp"), /*#__PURE__*/React.createElement("p", {
+    className: "text-xs text-center",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Ao enviar, você será direcionado pro nosso WhatsApp com a mensagem já pronta."))), abaContato === "whatsapp" && /*#__PURE__*/React.createElement("div", {
+    key: "whatsapp",
+    className: "rounded-2xl p-8 sm:p-10 text-center text-white",
+    style: {
+      backgroundColor: COLORS.pink,
+      animation: "fadeSlideIn 0.35s ease"
+    }
+  }, /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 38,
+    className: "mx-auto mb-4",
+    strokeWidth: 1.5
+  }), /*#__PURE__*/React.createElement("h3", {
+    className: "font-display text-2xl font-bold mb-2"
+  }, "Prefere falar agora mesmo?"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm md:text-base text-white/90 mb-7"
+  }, "Chama a gente no WhatsApp, é a forma mais rápida de agendar."), /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Vim pelo site e quero falar agora com vocês."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "cta-glow inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold transition-transform hover:scale-105",
+    style: {
+      backgroundColor: "white",
+      color: COLORS.pinkDark
+    }
+  }, /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 18
+  }), "Chamar no WhatsApp agora"), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center justify-center gap-2 mt-5 text-xs text-white/80"
+  }, /*#__PURE__*/React.createElement(Clock, {
+    size: 14
+  }), "Seg a Sáb, horário comercial")))), /*#__PURE__*/React.createElement("section", {
+    className: "max-w-6xl mx-auto px-6 py-20"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-10 max-w-xl"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "O que dizem"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Quem já passou por aqui"), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm mt-2",
+    style: {
+      color: COLORS.muted
+    }
+  }, "Depoimentos de quem já confia no Duducão pra cuidar do seu melhor amigo.")), /*#__PURE__*/React.createElement("div", {
+    className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+  }, AVALIACOES.map((a, i) => /*#__PURE__*/React.createElement(Reveal, {
+    key: i,
+    delay: i * 0.12
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "rounded-2xl p-6 border h-full",
+    style: {
+      backgroundColor: COLORS.surface,
+      borderColor: "#F0DCE9"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex gap-0.5 mb-3"
+  }, Array.from({
+    length: a.nota
+  }).map((_, idx) => /*#__PURE__*/React.createElement(Star, {
+    key: idx,
+    size: 15,
+    fill: COLORS.pink,
+    color: COLORS.pink
+  }))), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm leading-relaxed mb-4",
+    style: {
+      color: COLORS.text
+    }
+  }, "\"", a.texto, "\""), /*#__PURE__*/React.createElement("p", {
+    className: "text-xs font-bold",
+    style: {
+      color: COLORS.navy
+    }
+  }, a.nome, " ", /*#__PURE__*/React.createElement("span", {
+    className: "font-normal",
+    style: {
+      color: COLORS.muted
+    }
+  }, "· ", a.pet))))))), /*#__PURE__*/React.createElement("section", {
+    className: "py-20",
+    style: {
+      backgroundColor: COLORS.surface
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-3xl mx-auto px-6"
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "mb-10"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "text-xs font-bold uppercase tracking-widest",
+    style: {
+      color: COLORS.pink
+    }
+  }, "Dúvidas"), /*#__PURE__*/React.createElement("h2", {
+    className: "font-display text-3xl font-bold mt-2",
+    style: {
+      color: COLORS.navy
+    }
+  }, "Perguntas frequentes")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-3"
+  }, FAQ.map((item, i) => {
+    const aberto = faqAberto === i;
+    return /*#__PURE__*/React.createElement("div", {
+      key: item.pergunta,
+      className: "rounded-xl border overflow-hidden",
+      style: {
+        borderColor: "#F0DCE9",
+        backgroundColor: "white"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setFaqAberto(aberto ? -1 : i),
+      className: "w-full flex items-center justify-between gap-4 text-left px-5 py-4"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "text-sm font-bold",
+      style: {
+        color: COLORS.navy
+      }
+    }, item.pergunta), /*#__PURE__*/React.createElement(ChevronDown, {
+      size: 18,
+      color: COLORS.pink,
+      className: "shrink-0 transition-transform duration-300",
+      style: {
+        transform: aberto ? "rotate(180deg)" : "rotate(0deg)"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxHeight: aberto ? "200px" : "0px",
+        opacity: aberto ? 1 : 0,
+        transition: "max-height 0.35s ease, opacity 0.3s ease",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("p", {
+      className: "text-sm leading-relaxed px-5 pb-4",
+      style: {
+        color: COLORS.muted
+      }
+    }, item.resposta)));
+  })))), /*#__PURE__*/React.createElement("footer", {
+    id: "contato",
+    style: {
+      backgroundColor: COLORS.navyDark
+    },
+    className: "text-white"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-center gap-2 mb-3"
+  }, /*#__PURE__*/React.createElement(PawPrint, {
+    size: 22,
+    color: COLORS.pink
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "font-display text-lg font-bold"
+  }, "Duducão Banho e Tosa")), /*#__PURE__*/React.createElement("p", {
+    className: "text-sm text-white/70 leading-relaxed"
+  }, "Cuidado de verdade pro seu pet, em Rio do Sul - SC, desde 2016.")), /*#__PURE__*/React.createElement("div", {
+    className: "space-y-3 text-sm text-white/80"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start gap-2"
+  }, /*#__PURE__*/React.createElement(MapPin, {
+    size: 16,
+    color: COLORS.pink,
+    className: "mt-0.5 shrink-0"
+  }), /*#__PURE__*/React.createElement("span", null, ENDERECO)), /*#__PURE__*/React.createElement("div", {
+    className: "flex items-start gap-2"
+  }, /*#__PURE__*/React.createElement(Clock, {
+    size: 16,
+    color: COLORS.pink,
+    className: "mt-0.5 shrink-0"
+  }), /*#__PURE__*/React.createElement("span", null, "Seg a Sáb, 8h às 18h", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: estaAberto ? "#6FD69A" : "#F29B9B"
+    },
+    className: "font-semibold"
+  }, estaAberto ? "Aberto agora" : proximaAbertura))), /*#__PURE__*/React.createElement("a", {
+    href: INSTAGRAM_URL,
+    target: "_blank",
+    rel: "noreferrer",
+    className: "flex items-center gap-2 hover:text-white"
+  }, /*#__PURE__*/React.createElement(Instagram, {
+    size: 16,
+    color: COLORS.pink
+  }), INSTAGRAM), /*#__PURE__*/React.createElement("a", {
+    href: FACEBOOK_URL,
+    target: "_blank",
+    rel: "noreferrer",
+    className: "flex items-center gap-2 hover:text-white"
+  }, /*#__PURE__*/React.createElement(Facebook, {
+    size: 16,
+    color: COLORS.pink
+  }), "duducao.banhoetosa")), /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col gap-3"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Vim pelo site e gostaria de agendar."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }, /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 16
+  }), "Chamar no WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    href: `tel:+${WHATSAPP_NUMERO}`,
+    className: "inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold border border-white/20"
+  }, /*#__PURE__*/React.createElement(Phone, {
+    size: 16
+  }), "(47) 99135-1937"))), /*#__PURE__*/React.createElement("div", {
+    className: "border-t border-white/10 py-5 text-center text-xs text-white/50 flex items-center justify-center gap-1.5"
+  }, /*#__PURE__*/React.createElement(Bone, {
+    size: 12
+  }), "© ", new Date().getFullYear(), " Duducão Banho e Tosa. Todos os direitos reservados.")), /*#__PURE__*/React.createElement("a", {
+    href: whatsappLink("Olá! Vim pelo site e gostaria de falar com vocês."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "fixed bottom-5 right-5 z-50 flex items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110",
+    style: {
+      backgroundColor: COLORS.pink,
+      width: "58px",
+      height: "58px"
+    },
+    "aria-label": "Chamar no WhatsApp"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "absolute inline-flex h-full w-full rounded-full cta-glow",
+    style: {
+      backgroundColor: COLORS.pink
+    }
+  }), /*#__PURE__*/React.createElement(MessageCircle, {
+    size: 26,
+    color: "white",
+    className: "relative"
+  }))));
+}
+
+const rootEl = document.getElementById("root");
+const root = ReactDOM.createRoot(rootEl);
+root.render(React.createElement(DuducaoSite));
+
+</script>
+</body>
+</html>
